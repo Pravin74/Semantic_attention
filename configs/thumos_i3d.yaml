@@ -2,8 +2,8 @@ dataset_name: thumos
 train_split: ['validation']
 val_split: ['test']
 dataset: {
-  json_file: ./data/thumos/annotations/thumos14.json,
-  feat_folder: ./data/thumos/i3d_features,
+  json_file: /fs/cfar-projects/pravin/recovering_activities_patterns/thumos/thumos/annotations/thumos14.json,   
+  feat_folder: /fs/cfar-projects/pravin/recovering_activities_patterns/thumos/thumos/i3d_features,
   file_prefix: ~,
   file_ext: .npy,
   num_classes: 20,
@@ -18,7 +18,7 @@ dataset: {
 model: {
   fpn_type: identity,
   max_buffer_len_factor: 6.0,
-  n_mha_win_size: 19,
+  n_mha_win_size: -1,
 }
 opt: {
   learning_rate: 0.0001,
@@ -26,7 +26,7 @@ opt: {
   weight_decay: 0.05,
 }
 loader: {
-  batch_size: 2,
+  batch_size: 1,
 }
 train_cfg: {
   init_loss_norm: 100,
@@ -47,3 +47,6 @@ test_cfg: {
   multiclass_nms: True,
 }
 output_folder: ./ckpt/
+
+
+

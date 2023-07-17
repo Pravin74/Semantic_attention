@@ -150,6 +150,7 @@ class THUMOS14Dataset(Dataset):
         filename = os.path.join(self.feat_folder,
                                 self.file_prefix + video_item['id'] + self.file_ext)
         feats = np.load(filename).astype(np.float32)
+        # print (feats.shape)
 
         # deal with downsampling (= increased feat stride)
         feats = feats[::self.downsample_rate, :]
